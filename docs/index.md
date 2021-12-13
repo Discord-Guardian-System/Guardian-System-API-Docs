@@ -53,5 +53,5 @@ View the supported fields and expected content for requests based on each endpoi
 | Method | GET | `method: GET` |
 | Protocol | https/1.1 | `protocol: https/1.1` |
 | Path | Route path / Endpoint | `path: /offenders` |
-| Parameters | The ID of information requested | `parameters: "{id: resource-id}"` |
+| Parameters | The ID of information requested | `parameters: "{id: offender-id}"` |
 | Authorization | Basic Request Authorization | `authorization: Basic encoded-credentials`|
