@@ -24,10 +24,13 @@ Submitting a request for an `API Token` is fairly straight forward you can join 
 
 ## Making Requests to The API
 
-Making requests to the API are fairly simple. We use a basic authorization. Authorization tokens must be utf-8 and base64 encoded, then decoded utf-8. Python Example:
+Making requests to the API are fairly simple. Depending on the request method how your request is formatted will change. POST requests are made straight to the endpoint, while GET requests require the use of request parameters either in the path or via the parameters field of the request header.
 
 
 ### Authorization 
+Requests use basic authorization. Authorization tokens must be utf-8 and base64 encoded, then decoded utf-8. 
+
+Python Example:
 ```py
 clientId =  126483968473727964 # You Discord Application Id
 api_token = brgnadhshdhsdghrhh.fdntndtsfsrbesvebrbsr 
