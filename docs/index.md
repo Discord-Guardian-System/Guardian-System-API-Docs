@@ -10,6 +10,14 @@ The Discord Guardian System is a REST API created with the intention of providin
 
 Below are a list of all endpoints for `v1` of the API, their supported methods and path make-up. All requests should be made to the official API url: `https://api.guardiansystem.xyz/v1`.
     
+| Endpoint | Methods | Path | Description |
+| --- | --- | --- | --- |
+| offenders | GET | `/offenders/{offender-id}` | Retrieves an offender, if present from API |
+| servers | GET | `/servers/{server-id}` | Retrieves a Discord Server, if present from API |
+| links | GET | `/links/{url-encoded-link}` | Retrieves a potential Scam Link from API if present | 
+| Requests | GET, POST | GET: `/requests/{request-id}` \n POST: `/requests` | Retrieves or Creates a request| 
+| Reports | GET, POST | GET: `/reports/{report-id}` \n POST: `/reports` | Retrieves or creates a report, submits addition to API. |
+
     1. `/offenders` - Retrieve information from the API about a member. Will return offense information or NONE FOUND response if user is not blacklisted. 
         - Methods: GET
         - Path: `/offenders/{offender-id}`
