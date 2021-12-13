@@ -10,38 +10,13 @@ The Discord Guardian System is a REST API created with the intention of providin
 
 Below are a list of all endpoints for `v1` of the API, their supported methods and path make-up. All requests should be made to the official API url: `https://api.guardiansystem.xyz/v1`.
     
-| Endpoint | Methods | Path | Description |
+| Endpoint | Methods | Paths | Description |
 | --- | --- | --- | --- |
-| offenders | GET | `/offenders/{offender-id}` | Retrieves an offender, if present from API |
-| servers | GET | `/servers/{server-id}` | Retrieves a Discord Server, if present from API |
-| links | GET | `/links/{url-encoded-link}` | Retrieves a potential Scam Link from API if present | 
+| Offenders | GET | `/offenders/{offender-id}` | Retrieves a user's offense, if present from API |
+| Servers | GET | `/servers/{server-id}` | Retrieves a Discord Server, if present from API |
+| Links | GET | `/links/{url-encoded-link}` | Retrieves a potential Scam Link from API if present | 
 | Requests | GET, POST | GET: `/requests/{request-id}` POST: `/requests` | Retrieves or Creates a request| 
 | Reports | GET, POST | GET: `/reports/{report-id}` POST: `/reports` | Retrieves or creates a report, submits addition to API. |
-
-    1. `/offenders` - Retrieve information from the API about a member. Will return offense information or NONE FOUND response if user is not blacklisted. 
-        - Methods: GET
-        - Path: `/offenders/{offender-id}`
-    
-    2. `/servers` - Retrieve information from the API regarding a Discord Server. Will return server information or NONE FOUND response if server is not blacklisted.
-        - Methods: GET
-        - Path: `/servers/{server-id}`
-    
-    3. `/links` - Retrieve information about a potential scam link. Will return link information or NONE FOUND response if not in system.
-        - Methods: GET
-        - Path: `/links/{url-encoded-link}`
-    
-    4. `/requests` - Request or retreive a data requests status from the API. Guardian System allows its offenders or offending server owners/admins to request their stored data as an attempt to remain as transparent as possible. Only the server owner or user who owns the information can request access to it. 
-        - Methods: POST, GET
-        - Paths:
-            - POST: `/requests` - include request creation data as JSON object in request payload
-            - GET: `/requests/{request-id}` - gets a requests status via the provided ID.
-    
-    5. `/reports` - create or retrieve a report from the API. Reports are used to adding data to the API. Whether reporting a user, server, or simply a potential scam link. These reports are posted in an official channel in our discord server where auditors will investigate and ultimately decide upon its addition to the API or abandonment.
-        - Methods: POST, GET
-        - Paths:
-            - POST: `/reports` - include report creation data as JSON object in request payload.
-            - GET: `/reports/{report-id}` - Retrieves a report by ID and returns its current status. (Accepted, Abandoned, Pending) 
-
 
  ## Getting Started
  
