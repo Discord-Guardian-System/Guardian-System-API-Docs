@@ -2,14 +2,39 @@
 
 Welcome, we are glad you have finally made it over to our repo, and are interested in possibly working with us. The Discord Guardian System in short is a way for moderation bots to all share data that then can be used to better protect end users on Discord.
 
-## How It Works
+## Introduction
 
-The Guardian System is a REST API structure. Any data can be requested through the API's endpoints (You can find these in the `endpoints.json` file in the `server > config` folder of this repo).
+The Discord Guardian System is a REST API created with the intention of providing further security and risk management for servers on the Discord platform. The API can be accessed by making requests to set endpoints, either via requests or aiohttp for JavaScript and Python or via the use of our in house packages; PyGuard (Python) & GuardianJS (JavaScript). If you are a developer using another language, you will be forced to create and send your own requests until either a package becomes available. Creating your own package is encouraged, and would earn special roles in our community [Discord Server](https://dsc.gg/dgsofficial) if you are the first to create a package for your preferred language. 
 
- Bot programs will be able to request information through GET requests and can submit information using POST requests. There may be different API packages to download in the future making interaction with the API easier. 
- 
- All requests are cached on our server in a `cache > call > return` system. What this means is that every request that comes in, the server will check the cache for the requested data before requesting it from the database. The goal here is to make the response as fast as possible for you and your applications, removing any need for response time handling on your end. 
- 
+## Endpoints
+
+Below are a list of all endpoints for `v1` of the API, their supported methods and path make-up. All requests should be made to the official API url: `https://api.guardiansystem.xyz/v1`.
+    
+    1. `/offenders` - Retrieve information from the API about a member. Will return offense information or NONE FOUND response if user is not blacklisted. 
+        - Methods: GET
+        - Path: `/offenders/{offender-id}`
+    
+    2. `/servers` - Retrieve information from the API regarding a Discord Server. Will return server information or NONE FOUND response if server is not blacklisted.
+        - Methods: GET
+        - Path: `/servers/{server-id}`
+    
+    3. `/links` - Retrieve information about a potential scam link. Will return link information or NONE FOUND response if not in system.
+        - Methods: GET
+        - Path: `/links/{url-encoded-link}`
+    
+    4. `/requests` - Request or retreive a data requests status from the API. Guardian System allows its offenders or offending server owners/admins to request their stored data as an attempt to remain as transparent as possible. Only the server owner or user who owns the information can request access to it. 
+        - Methods: POST, GET
+        - Paths:
+            - POST: `/requests` - include request creation data as JSON object in request payload
+            - GET: `/requests/{request-id}` - gets a requests status via the provided ID.
+    
+    5. `/reports` - create or retrieve a report from the API. Reports are used to adding data to the API. Whether reporting a user, server, or simply a potential scam link. These reports are posted in an official channel in our discord server where auditors will investigate and ultimately decide upon its addition to the API or abandonment.
+        - Methods: POST, GET
+        - Paths:
+            - POST: `/reports` - include report creation data as JSON object in request payload.
+            - GET: `/reports/{report-id}` - Retrieves a report by ID and returns its current status. (Accepted, Abandoned, Pending) 
+
+
  ## Getting Started
  
  To gain access to the server and obtain the ability to even have your requests acknowledged you will need an `API token`. Tokens are generated and given out on request/submission basis, to gain a token you will need to pass a verification. The verification process involves your application/bot being in at least 75 servers. You will need to submit a way to show your application/bots growth since initial release. Your application/bot must already be a verified Discord Bot. This may be limiting but for production and initial release we are limiting the amount of applications accepted for use.
