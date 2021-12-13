@@ -28,6 +28,7 @@ Making requests to the API are fairly simple. Depending on the request method ho
 
 
 ### Authorization 
+
 Requests use basic authorization. Authorization tokens must be utf-8 and base64 encoded, then decoded utf-8. 
 
 Python Example:
@@ -42,3 +43,15 @@ auth = decode(strencode, "utf-8")
 authorization = "Basic " + auth 
 ```
 
+## Endpoint Make Up
+View the supported fields and expected content for requests based on each endpoint.
+
+# Offender Endpoint
+
+| Field | Accepted Content | Example |
+|  ---  |        ---       |   ---   |
+| Method | GET | `method: GET` |
+| Protocol | https/1.1 | `protocol: https/1.1` |
+| Path | Route path / Endpoint | `path: /offenders` |
+| Parameters | The ID of information requested | `parameters: "{id: resource-id}"` |
+| Authorization | Basic Request Authorization | `authorization: Basic encoded-credentials`|
