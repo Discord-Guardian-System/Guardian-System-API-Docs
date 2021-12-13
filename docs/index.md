@@ -47,6 +47,7 @@ authorization = "Basic " + auth
 View the supported fields and expected content for requests based on each endpoint.
 
 ### Offender Endpoint
+Accessed to request information on a user who has been admitted to the system for breaching Discord's Terms of Service, Community Guidelines or a general threat to communities on the platform. 
 
 | Field | Accepted Content | Example |
 |  ---  |        ---       |   ---   |
