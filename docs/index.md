@@ -46,7 +46,7 @@ authorization = "Basic " + auth
 ## Endpoint Make Up
 View the supported fields and expected content for requests based on each endpoint.
 
-# Offender Endpoint
+### Offender Endpoint
 
 | Field | Accepted Content | Example |
 |  ---  |        ---       |   ---   |
